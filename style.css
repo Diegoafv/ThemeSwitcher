@@ -1,0 +1,90 @@
+:root {
+  --dark: #292c35;
+  --light: #f1f1f1;
+  --label: #111;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: var(--dark);
+  min-height: 100vh;
+  transition: 0.5s;
+}
+
+.switch-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.switch {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100px;
+  width: 230px;
+  background-color: var(--label);
+  border-radius: 60px;
+}
+
+.switch-circle {
+  height: 82px;
+  width: 82px;
+  background-color: var(--light);
+  border-radius: 50%;
+  margin-left: 10px;
+  margin-right: 10px;
+  animation: append-animate-circle-dark 0.1s linear;
+}
+
+.icon {
+  height: 90px;
+  width: 90px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.switch img {
+  animation: append-animate-icon 0.1s linear;
+}
+
+#dark {
+  animation: append-animate-circle-dark 0.1s linear;
+}
+#light {
+  animation: append-animate-circle-light 0.1s linear;
+}
+
+@keyframes append-animate-icon {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes append-animate-circle-light {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes append-animate-circle-dark {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
